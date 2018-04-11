@@ -1,0 +1,70 @@
+    <html>
+    <head>
+    	<h3 id="page_heading">Guess in which box the * is.</h3>
+    <meta charset="UTF-8"> 
+    <title>Guss Me</title>
+    <style type="text/css">
+    	#page_heading{
+    			margin-left: 550px;
+    			
+    	}
+	    .chessboard {
+	        width: 165px;
+	        height: 200px;
+	        margin: 200px;
+	        margin-left: 550px;
+	        background-color: #000;
+	        padding: 10px;
+	    }
+		ul.blocks {
+			list-style: none;
+			padding: 0;
+			margin: 2px 0;
+		}
+		.blocks li{
+			display: inline-block;
+			background-color: #fff;
+			padding: 20px;
+			margin: 2px;
+		}
+    </style>
+    <script type = "text/javascript">
+    	function guessme(li_id){
+    		var num = 	Math.floor(Math.random() * 9) + 1;
+    		var div = document.getElementById('li_id'+num);
+			div.innerHTML += '*';
+			if('li_id'+num == li_id){
+    			alert('You guessed it right');
+    		}
+    		refresh();
+    	}
+
+    	function refresh(){
+    		setTimeout(
+    			function() {
+    				location.reload();	
+    		},1000);
+    	}
+    </script>
+    </head>
+    <body>
+    <div class="chessboard">
+		<ul class="blocks">
+			<li id = "li_id1" onclick = "guessme('li_id1')"></li>
+			<li id = "li_id2" onclick = "guessme('li_id2')"></li>
+			<li id = "li_id3" onclick = "guessme('li_id3')"></li>
+		</ul>
+
+		<ul class="blocks">
+			<li id = "li_id4" onclick = "guessme('li_id4')"></li>
+			<li id = "li_id5" onclick = "guessme('li_id5')"></li>
+			<li id = "li_id6" onclick = "guessme('li_id6')"></li>
+		</ul>
+		<ul class="blocks">
+			<li id = "li_id7" onclick = "guessme('li_id7')"></li>
+			<li id = "li_id8" onclick = "guessme('li_id8')"></li>
+			<li id = "li_id9" onclick = "guessme('li_id9')"></li>
+		</ul>
+    </div>
+    </body>
+    </html>
